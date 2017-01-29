@@ -4,7 +4,6 @@ var weixin = require('./weixin');
 var Router = require('koa-router');
 var router = new Router();
 
-
 router.use('/api', api.routes());
 router.use('/weixin', weixin.routes());
 
