@@ -1,5 +1,5 @@
 var router = new require('koa-router')();
-var wechat = require('wechat');
+var wechat = require('co-wechat');
 var config = require('config');
 
 module.exports = router;
@@ -11,12 +11,8 @@ router.get('/info', function (ctx) {
     }
 });
 
-router.get('/wechat', wechat(config.weixin, function (req, res) {
-    var message = req.weixin;
+router.get('/wechat', wechat(config.weixin).middleware(function *() {
     console.info('message');
-    console.info(message);
-    if (message.FromUserName === 'cc') {
-        // 回复屌丝(普通回复)
-        res.reply('hehe');
-    }
+    console.info(this.weixin);
+    this.body = 'hehe';
 }));
