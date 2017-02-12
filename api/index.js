@@ -1,9 +1,7 @@
 var router = new require('koa-router')();
 
 
-router.get('/userInfo', function (ctx) {
-    console.info('234');
-    ctx.body = {'name': 'cfl'};
-});
+router.use('/user', require("./user").routes());
+
 
 module.exports = router;
