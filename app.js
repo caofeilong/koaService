@@ -13,7 +13,7 @@ var bodyParser = require('koa-bodyparser');
 
 router.use('/api', api.routes());
 
-router.get('/weixin', function (ctx, next) {
+router.post('/weixin', function (ctx, next) {
     co(wechat.middleware(weixin.event).bind(ctx, next))
 });
 
