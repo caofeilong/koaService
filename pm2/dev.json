@@ -1,4 +1,4 @@
-module.exports = {
+{
     "apps": [{
         "name": "koaService",
         "script": "/git/dev/koaService/app.js",
