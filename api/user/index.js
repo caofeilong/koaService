@@ -9,9 +9,7 @@ router.get('/userInfo', function (ctx) {
 
 
 router.post('/register', async function (ctx) {
-
-    var obj = await store.saveUser(ctx.request.body);
-
+    await store.saveUser(ctx.request.body);
     ctx.body = {
         success: true,
         data: {
