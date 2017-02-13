@@ -6,7 +6,7 @@
         "out_file": "/data/var/log/koa-service/koa-service.out.log",
         "node_args": "--harmony",
         "env": {
-            "NODE_ENV": "dev"
+            "NODE_ENV": "development"
         }
     }]
 }
