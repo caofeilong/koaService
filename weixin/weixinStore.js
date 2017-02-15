@@ -1,3 +1,3 @@
-exports.event = function *() {
-    this.body = 'hehe';
+exports.event = function (ctx) {
+    ctx.body = 'hehe';
 };
