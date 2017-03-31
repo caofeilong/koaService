@@ -5,6 +5,7 @@
         "error_file": "/data/var/log/koa-service/koa-service.err.log",
         "out_file": "/data/var/log/koa-service/koa-service.out.log",
         "node_args": "--harmony",
+        "watch":true,
         "env": {
             "NODE_ENV": "development"
         }
