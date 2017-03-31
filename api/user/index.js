@@ -19,4 +19,24 @@ router.post('/register', async function (ctx) {
     }
 });
 
+
+router.get('/list', async function (ctx) {
+    var obj = await store.userList();
+    ctx.body = {
+        success: true,
+        data: obj
+    }
+});
+
+
+
+router.get('/delete', async function (ctx) {
+    var obj = await store.delete(ctx.query._id);
+    ctx.body = {
+        success: true,
+        data: obj
+    }
+});
+
+
 module.exports = router;
