@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.16.1",
+    "cheerio": "^0.22.0",
     "co": "^4.6.0",
     "co-wechat": "^1.0.0",
     "config": "^1.24.0",
@@ -20,7 +21,10 @@
     "koa2-wechat": "0.0.3",
     "mongoose": "^4.8.2",
     "npm": "^4.1.2",
+    "request": "^2.81.0",
     "socket.io": "^1.7.3",
+    "superagent": "^3.5.2",
+    "superagent-charset": "^1.1.1",
     "wechat": "^2.0.3"
   }
 }
