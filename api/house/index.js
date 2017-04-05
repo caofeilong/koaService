@@ -1,7 +1,6 @@
 var router = new require('koa-router')();
 var controllerUtil = require('../lib/controllerUtil.js')
 var store = require('./houseStore.js');
-var middleware = require("../middleware")
 
 
 get('/buildData', async function (ctx) {
