@@ -3,8 +3,8 @@ var conn = require('../Connection');
 
 
 var userSchema = new mongoose.Schema({
-    uname: String,
-    pwd: String
+  uname: String,
+  pwd: String
 });
 
 

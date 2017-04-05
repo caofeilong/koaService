@@ -1,24 +1,16 @@
 var router = new require('koa-router')();
 var controllerUtil = require('../lib/controllerUtil.js')
-var store = require('./store.js');
+var store = require('./houseStore.js');
 var middleware = require("../middleware")
 
 
-post('/register', async function (ctx) {
-  await store.saveUser(ctx.request.body);
-  return {
-    code: 200,
-    msg: '註冊成功'
-  }
+get('/buildData', async function (ctx) {
+  return await store.buildData(ctx.request.body);
+
 })
 
 get('/list', async function () {
-  return await store.userList()
-})
-
-
-get('/delete', async function (ctx) {
-  return await store.delete(ctx.query._id);
+  return await store.list()
 })
 
 

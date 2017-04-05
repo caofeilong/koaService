@@ -21,20 +21,23 @@ function getData() {
             var $ = cheerio.load(html, {decodeEntities: false});
             __VIEWSTATE = $('#__VIEWSTATE').val()
             __EVENTVALIDATION = $('#__EVENTVALIDATION').val()
-            $('#Proinfo1_data tr').each((i, item)=> {
-                let row = ''
-                $(item).children().each((k, td) => {
-                    if ($(td).children().length > 0) {
-                        row = row + '    ' + ($($(td).children()[0]).attr('title') || '')
-                    } else {
-                        row = row + '    ' + ($(td).attr('title') || $(td).html() || '')
-                    }
-                })
-                console.info(i + '  ' + row);
+          $('#Proinfo1_DataGrid1 tr').each((i, item)=> {
+                if (i !== 0 ) {
+                    let row = ''
+                    $(item).children().each((k, td) => {
+                        if ($(td).children().length > 0) {
+                            row = row + '    ' + ($($(td).children()[0]).attr('title') ||$($(td).children()[0]).html() || '')
+                        } else {
+                            row = row + '    ' + ($(td).attr('title') || $(td).html() || '')
+                        }
+                    })
+                    row.trim() && console.info((i+(page*20)) + '  ' + row);
+                }
+
             });
             var option = $('select[name="Proinfo1$Page1$pages"]').children()
             pageCount = parseInt($(option[option.length - 1]).text())
-            pageCount = pageCount - page;
+            pageCount = pageCount-1 - page;
             page++
             if (pageCount >= 0) {
                 getData()
