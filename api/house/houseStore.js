@@ -4,7 +4,15 @@ const charset = require('superagent-charset');
 const request = require('superagent');
 charset(request)
 
+
+let pageCount = 0;
+let page = 0;
+let __VIEWSTATE = null
+let __EVENTVALIDATION = null
+
 exports.buildData = async function () {
+  pageCount = 0
+  page = 0
   return getData()
 }
 
@@ -16,10 +24,6 @@ exports.list = function () {
   })
 }
 
-let pageCount = 0;
-let page = 0;
-let __VIEWSTATE = null
-let __EVENTVALIDATION = null
 
 function getData(datas) {
   var datas = datas || []

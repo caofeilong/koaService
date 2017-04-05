@@ -7,7 +7,11 @@ var houseSchema = new mongoose.Schema({
   dev: String,
   address: String,
   area: String,
-  phone: String
+  phone: String,
+  createDate:{
+    type:Date,
+    default:Date.now
+  }
 }, {
   strict: true,
   toObject: {
