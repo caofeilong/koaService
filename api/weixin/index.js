@@ -3,7 +3,7 @@ var controllerUtil = require('../lib/controllerUtil.js')
 var store = require('./store.js');
 
 
-post('/valid', async function (ctx) {
+post('/register', async function (ctx) {
   await store.saveUser(ctx.request.body);
   return {
     code: 200,
