@@ -57,7 +57,7 @@ function getData(datas) {
                 obj.area = getValue(td, $)
                 break;
               case 4:
-                obj.pone = getValue(td, $)
+                obj.phone = getValue(td, $)
                 break;
             }
           })
