@@ -6,7 +6,7 @@ module.exports = {
         appsecret: '4812c2928147b6c74865cf071c9d3af6'
     },
     mongodb:{
-        uri:'mongodb://root:lovesomnus@101.200.141.116:27017/cms?authSource=admin',
+        uri:'mongodb://cfl:cfl123456@101.200.141.116:27017/cms?authSource=admin',
         options:{
         }
     }
