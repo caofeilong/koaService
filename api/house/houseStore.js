@@ -59,6 +59,9 @@ function getData(datas) {
               case 4:
                 obj.phone = getValue(td, $)
                 break;
+              case 5:
+                obj.projectid = getCode(td, $)
+                break;
             }
           })
           await house.update({projectName: obj.projectName}, obj, {upsert: true})
@@ -84,3 +87,8 @@ function getValue(td, $) {
     return ($(td).attr('title') || $(td).html() || '')
   }
 }
+
+function getCode(td, $) {
+  return $($(td).children()[0]).attr('href').split('?')[1].split('=')[1]
+}
+
